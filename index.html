@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Sadique Catererss</title>
+    <title>Sadique Caterers</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -43,122 +43,80 @@
 <!-- Header Start -->
 <div class="container-fluid bg-dark px-0">
 
-    <!-- Quick CSS fix for logo size (no need to edit the PNG) -->
     <style>
-        /* Desktop logo container */
-        .brand-logo-wrap {
-            width: 220px;       /* controls how wide the logo area is */
-            height: 90px;       /* controls how tall the logo is */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;   /* crops extra transparent padding */
-        }
-
-        /* Make the actual logo appear bigger inside the cropped box */
-        .brand-logo-wrap img {
-            height: 160px;      /* increase until it looks right */
+        .brand-logo img {
+            height: 200px;   /* ⬅️ increased from 80px */
             width: auto;
             object-fit: contain;
-            transform: scale(1.6);        /* boosts the visible logo */
-            transform-origin: center;
             display: block;
         }
-
-        /* Mobile logo */
-        .brand-logo-wrap-mobile {
-            width: 170px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .brand-logo-wrap-mobile img {
-            height: 120px;
-            width: auto;
-            transform: scale(1.35);
-            transform-origin: left center;
-            display: block;
+    
+        @media (max-width: 991px) {
+            .brand-logo img {
+                height: 165px; /* ⬅️ slightly bigger on mobile */
+            }
         }
     </style>
+    
 
-    <div class="row gx-0 wow fadeIn" data-wow-delay="0.1s">
-
-        <!-- LOGO SECTION (DESKTOP ONLY) -->
-        <div class="col-lg-3 bg-dark d-none d-lg-flex align-items-center justify-content-center">
-            <a href="index.html" class="navbar-brand m-0 p-0">
-                <div class="brand-logo-wrap">
-                    <img src="img/logo.png" alt="Sadique Caterers Logo">
-                </div>
-            </a>
-        </div>
-
-        <!-- RIGHT SIDE -->
-        <div class="col-lg-9">
-
-            <!-- TOP BAR -->
-            <div class="row gx-0 d-none d-lg-flex bg-dark border-bottom border-secondary">
-                <div class="col-6 px-5 text-start">
-                    <div class="h-100 d-inline-flex align-items-center py-2">
-                        <i class="fa fa-envelope text-primary me-2"></i>
-                        <p class="mb-0 text-white">info@example.com</p>
-                    </div>
-                </div>
-                <div class="col-6 px-5 text-end">
-                    <div class="h-100 d-inline-flex align-items-center py-2">
-                        <i class="fa fa-phone-alt text-primary me-2"></i>
-                        <p class="mb-0 text-white">+012 345 6789</p>
-                    </div>
-                </div>
+    <!-- TOP INFO BAR -->
+    <div class="row gx-0 bg-dark border-bottom border-secondary d-none d-lg-flex">
+        <div class="col-6 px-4 text-start">
+            <div class="h-100 d-inline-flex align-items-center py-2">
+                <i class="fa fa-envelope text-primary me-2"></i>
+                <p class="mb-0 text-white">sadiquecaterers@gmail.com</p>
             </div>
-
-            <!-- NAVBAR -->
-            <nav class="navbar navbar-expand-lg navbar-dark px-3 px-lg-5" style="background:#000; min-height:70px;">
-
-                <!-- LOGO (MOBILE ONLY) -->
-                <a href="index.html" class="navbar-brand d-lg-none m-0 p-0">
-                    <div class="brand-logo-wrap-mobile">
-                        <img src="img/logo.png" alt="Sadique Caterers Logo">
-                    </div>
-                </a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="menu.html" class="nav-item nav-link">Menu</a>
-                        <a href="team.html" class="nav-item nav-link">Chefs</a>
-
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Post</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Error</a>
-                            </div>
-                        </div>
-
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>
-
-                    <div class="d-none d-lg-flex align-items-center">
-                        <a class="btn btn-primary rounded-pill px-4" href="contact.html">
-                            Book Catering
-                        </a>
-                    </div>
-                </div>
-            </nav>
-
+        </div>
+        <div class="col-6 px-4 text-end">
+            <div class="h-100 d-inline-flex align-items-center py-2">
+                <i class="fa fa-phone-alt text-primary me-2"></i>
+                <p class="mb-0 text-white">+012 345 6789</p>
+            </div>
         </div>
     </div>
+
+    <!-- MAIN HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-dark px-3 px-lg-4" style="background:#000; min-height:80px;">
+
+        <!-- LOGO (NO EXTRA SPACE) -->
+        <a href="index.html" class="navbar-brand brand-logo m-0 p-0 me-4">
+            <img src="img/logo.png" alt="Sadique Caterers Logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav me-auto py-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="menu.html" class="nav-item nav-link">Menu</a>
+                <a href="team.html" class="nav-item nav-link">Chefs</a>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="blog.html" class="dropdown-item">Blog Post</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="404.html" class="dropdown-item">404 Error</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+
+            <div class="d-none d-lg-flex align-items-center">
+                <a class="btn btn-primary rounded-pill px-4" href="contact.html">
+                    Book Catering
+                </a>
+            </div>
+        </div>
+    </nav>
 </div>
 <!-- Header End -->
+
 
 
 
@@ -699,15 +657,15 @@
                         <h3 class="text-light mb-4">Get In Touch</h3>
                         <div class="d-flex mb-2">
                             <i class="bi bi-geo-alt text-primary me-2"></i>
-                            <p class="mb-0">123 Street, New York, USA</p>
+                            <p class="mb-0">34 De Alwis Pl, Dehiwala-Mount Lavinia 10350</p>
                         </div>
                         <div class="d-flex mb-2">
                             <i class="bi bi-envelope-open text-primary me-2"></i>
-                            <p class="mb-0">info@example.com</p>
+                            <p class="mb-0">sadiquecaterers@gmail.com</p>
                         </div>
                         <div class="d-flex mb-2">
                             <i class="bi bi-telephone text-primary me-2"></i>
-                            <p class="mb-0">+012 345 67890</p>
+                            <p class="mb-0">+94 72 561 1885</p>
                         </div>
                         <div class="d-flex mt-4">
                             <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i
