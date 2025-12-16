@@ -40,125 +40,164 @@
     <!-- Spinner End -->
 
 
-<!-- Header Start -->
-<div class="container-fluid bg-dark px-0">
+<!-- HEADER START -->
+<div class="container-fluid px-0">
 
-    <!-- Quick CSS fix for logo size (no need to edit the PNG) -->
     <style>
-        /* Desktop logo container */
-        .brand-logo-wrap {
-            width: 220px;       /* controls how wide the logo area is */
-            height: 90px;       /* controls how tall the logo is */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;   /* crops extra transparent padding */
+      /* =========================
+         HEADER BASE
+      ========================== */
+      .main-header {
+        background: #0b0b0b;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+  
+      /* =========================
+         LOGO (VERY BIG & CLEAR)
+      ========================== */
+      .brand-logo img {
+        height: 130px;               /* ⬅️ BIG LOGO */
+        width: auto;
+        object-fit: contain;
+        display: block;
+      }
+  
+      @media (max-width: 991px) {
+        .brand-logo img {
+          height: 90px;
         }
-
-        /* Make the actual logo appear bigger inside the cropped box */
-        .brand-logo-wrap img {
-            height: 160px;      /* increase until it looks right */
-            width: auto;
-            object-fit: contain;
-            transform: scale(1.6);        /* boosts the visible logo */
-            transform-origin: center;
-            display: block;
-        }
-
-        /* Mobile logo */
-        .brand-logo-wrap-mobile {
-            width: 170px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .brand-logo-wrap-mobile img {
-            height: 120px;
-            width: auto;
-            transform: scale(1.35);
-            transform-origin: left center;
-            display: block;
-        }
+      }
+  
+      /* =========================
+         NAVBAR LAYOUT
+      ========================== */
+      .navbar {
+        min-height: 130px;
+        align-items: center;
+      }
+  
+      .navbar-nav .nav-link {
+        padding: 0.9rem 1.1rem;
+        font-weight: 500;
+        color: rgba(255,255,255,0.75);
+      }
+  
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link.active {
+        color: #ff9f1a;
+      }
+  
+      /* =========================
+         DROPDOWN
+      ========================== */
+      .dropdown-menu {
+        background: #141414;
+        border: 0;
+        border-radius: 14px;
+        padding: 10px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      }
+  
+      .dropdown-item {
+        color: rgba(255,255,255,0.85);
+        border-radius: 10px;
+        padding: 10px 12px;
+      }
+  
+      .dropdown-item:hover {
+        background: rgba(255,159,26,0.15);
+        color: #ff9f1a;
+      }
+  
+      /* =========================
+         CTA BUTTON
+      ========================== */
+      .header-cta {
+        background: #ff9f1a;
+        color: #111;
+        font-weight: 600;
+        padding: 0.75rem 1.4rem;
+        border-radius: 999px;
+        border: none;
+      }
+  
+      .header-cta:hover {
+        opacity: 0.9;
+        color: #111;
+      }
+  
+      /* OPTIONAL: brighten logo if dark */
+      .brand-logo img {
+        filter: brightness(1.15) contrast(1.1);
+      }
     </style>
+  
+    <nav class="navbar navbar-expand-lg navbar-dark main-header px-3 px-lg-4">
+      <div class="container-fluid px-0">
+  
+        <!-- LOGO -->
+        <a href="index.html" class="navbar-brand brand-logo m-0 p-0 me-4">
+          <img src="img/logo.png" alt="Sadique Caterers Logo">
+        </a>
+  
+        <!-- TOGGLER -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <!-- MENU -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto align-items-lg-center">
+  
+            <li class="nav-item">
+              <a href="index.html" class="nav-link active">Home</a>
+            </li>
+  
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">About</a>
+            </li>
+  
+            <li class="nav-item">
+              <a href="menu.html" class="nav-link">Menu</a>
+            </li>
 
-    <div class="row gx-0 wow fadeIn" data-wow-delay="0.1s">
+            <li class="nav-item">
+                <a href="blog.html" class="nav-link">Blog</a>
+              </li>
 
-        <!-- LOGO SECTION (DESKTOP ONLY) -->
-        <div class="col-lg-3 bg-dark d-none d-lg-flex align-items-center justify-content-center">
-            <a href="index.html" class="navbar-brand m-0 p-0">
-                <div class="brand-logo-wrap">
-                    <img src="img/logo.png" alt="Sadique Caterers Logo">
-                </div>
-            </a>
+              <li class="nav-item">
+                <a href="testimonial.html" class="nav-link">Testimonial</a>
+              </li>
+  
+            <li class="nav-item">
+              <a href="team.html" class="nav-link">Reservation</a>
+            </li>
+  
+  
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+  
+            <!-- MOBILE CTA -->
+            <li class="nav-item d-lg-none mt-3">
+              <a href="contact.html" class="btn header-cta w-100">Book Catering</a>
+            </li>
+          </ul>
+  
+          <!-- DESKTOP CTA -->
+          <div class="d-none d-lg-flex align-items-center">
+            <a href="team.html" class="btn header-cta">Book Catering</a>
+          </div>
         </div>
+  
+      </div>
+    </nav>
+  </div>
+  <!-- HEADER END -->
+  
+  
 
-        <!-- RIGHT SIDE -->
-        <div class="col-lg-9">
 
-            <!-- TOP BAR -->
-            <div class="row gx-0 d-none d-lg-flex bg-dark border-bottom border-secondary">
-                <div class="col-6 px-5 text-start">
-                    <div class="h-100 d-inline-flex align-items-center py-2">
-                        <i class="fa fa-envelope text-primary me-2"></i>
-                        <p class="mb-0 text-white">info@example.com</p>
-                    </div>
-                </div>
-                <div class="col-6 px-5 text-end">
-                    <div class="h-100 d-inline-flex align-items-center py-2">
-                        <i class="fa fa-phone-alt text-primary me-2"></i>
-                        <p class="mb-0 text-white">+012 345 6789</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- NAVBAR -->
-            <nav class="navbar navbar-expand-lg navbar-dark px-3 px-lg-5" style="background:#000; min-height:70px;">
-
-                <!-- LOGO (MOBILE ONLY) -->
-                <a href="index.html" class="navbar-brand d-lg-none m-0 p-0">
-                    <div class="brand-logo-wrap-mobile">
-                        <img src="img/logo.png" alt="Sadique Caterers Logo">
-                    </div>
-                </a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="menu.html" class="nav-item nav-link">Menu</a>
-                        <a href="team.html" class="nav-item nav-link">Chefs</a>
-
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Post</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Error</a>
-                            </div>
-                        </div>
-
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>
-
-                    <div class="d-none d-lg-flex align-items-center">
-                        <a class="btn btn-primary rounded-pill px-4" href="contact.html">
-                            Book Catering
-                        </a>
-                    </div>
-                </div>
-            </nav>
-
-        </div>
-    </div>
-</div>
-<!-- Header End -->
 
 
 
@@ -167,29 +206,34 @@
     <div class="container-fluid p-5 mb-5 bg-dark text-secondary">
         <div class="row g-5 py-5">
             <div class="col-12 wow fadeIn" data-wow-delay="0.1s">
-                <h1 class="display-1 text-secondary text-center mb-0">John Doe</h1>
+                <h1 class="display-1 text-secondary text-center mb-0 audrey-font">
+                    Experience Fine Catering
+                </h1> 
             </div>
+    
             <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
                 <img class="img-fluid rounded mb-3" src="img/hero-2.jpg">
                 <p>
                     <i class="bi bi-arrow-down animate-up-down" style="font-size: 3rem;"></i>
                 </p>
                 <p class="mb-0">
-                    Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos
-                    sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo
-                    justo et tempor consetetur takimata eirmod.
+                    At Sadique Caterers, we craft memorable dining experiences through carefully curated menus,
+                    premium ingredients, and flawless presentation. From intimate gatherings to grand celebrations,
+                    every detail is handled with precision, passion, and professionalism.
                 </p>
             </div>
+    
             <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s" style="min-height: 500px;">
                 <div class="position-relative h-100">
                     <img class="position-absolute w-100 h-100 rounded" src="img/hero-1.jpg" style="object-fit: cover;">
                 </div>
             </div>
+    
             <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
                 <p>
-                    Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos
-                    sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo
-                    justo et tempor consetetur takimata eirmod.
+                    Our culinary team blends traditional flavours with modern techniques to deliver dishes
+                    that delight every palate. We focus on consistency, hygiene, and exceptional service,
+                    ensuring your event is remembered for all the right reasons.
                 </p>
                 <p>
                     <i class="bi bi-arrow-up animate-up-down" style="font-size: 3rem;"></i>
@@ -198,286 +242,203 @@
             </div>
         </div>
     </div>
+    
     <!-- Hero End -->
 
 
     <!-- About Start -->
-    <div class="container-fluid p-5">
-        <div class="row gx-5">
-            <div class="col-lg-5 mb-5 mb-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 500px;">
-                <div class="position-relative h-100">
-                    <div class="position-absolute top-0 start-0 animate-rotate"
-                        style="width: 160px; height: 160px;">
-                        <img class="img-fluid" src="img/about-round.jpg" alt="">
-                    </div>
-                    <img class="position-absolute w-100 h-100 rounded-circle rounded-bottom rounded-end"
-                        src="img/about.jpg" style="object-fit: cover;">
+<div class="container-fluid p-5">
+    <div class="row gx-5">
+        <div class="col-lg-5 mb-5 mb-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 500px;">
+            <div class="position-relative h-100">
+                <div class="position-absolute top-0 start-0 animate-rotate"
+                    style="width: 160px; height: 160px;">
+                    <img class="img-fluid" src="img/about-round.jpg" alt="">
                 </div>
+                <img class="position-absolute w-100 h-100 rounded-circle rounded-bottom rounded-end"
+                    src="img/about.jpg" style="object-fit: cover;">
             </div>
-            <div class="col-lg-7">
-                <div class="mb-4 wow fadeIn" data-wow-delay="0.2s">
-                    <h5 class="section-title">About Us</h5>
-                    <h1 class="display-3 mb-0">Cooking Together With The Expert</h1>
-                </div>
-                <p class="mb-4 wow fadeIn" data-wow-delay="0.3s">Nonumy erat diam duo labore clita. Sit magna ipsum dolor sed ea duo at ut. Tempor sit
-                    lorem sit magna ipsum duo. Sit eos dolor ut sea rebum, diam sea rebum lorem kasd ut ipsum dolor est
-                    ipsum. Et stet amet justo amet clita erat, ipsum sed at ipsum eirmod labore lorem.</p>
-                <div class="row">
-                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
-                        <div class="bg-light rounded p-4">
-                            <img class="img-fluid bg-primary rounded-circle mb-3" src="img/feature-1.png" style="width: 80px; height: 80px;">
-                            <h4>Master Chefs</h4>
-                            <p class="mb-0">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam
-                                ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing
-                                labore.</p>
-                        </div>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="mb-4 wow fadeIn" data-wow-delay="0.2s">
+                <h5 class="section-title">About Us</h5>
+                <h1 class="display-3 mb-0">Cooking Together With The Expert</h1>
+            </div>
+
+            <p class="mb-4 wow fadeIn" data-wow-delay="0.3s">
+                Founded in 2012, Sadique Caterers has been delivering exceptional catering services built on
+                quality, trust, and consistency. What began as a passion for authentic flavours has grown
+                into a professional catering service trusted for weddings, corporate events, and private
+                celebrations of all sizes.
+            </p>
+
+            <div class="row">
+                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
+                    <div class="bg-light rounded p-4">
+                        <img class="img-fluid bg-primary rounded-circle mb-3"
+                             src="img/feature-1.png" style="width: 80px; height: 80px;">
+                        <h4>Master Chefs</h4>
+                        <p class="mb-0">
+                            Our experienced chefs combine traditional recipes with modern techniques,
+                            ensuring every dish is prepared with precision, creativity, and care.
+                        </p>
                     </div>
-                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                        <div class="bg-light rounded p-4">
-                            <img class="img-fluid bg-primary rounded-circle mb-3" src="img/feature-3.png" style="width: 80px; height: 80px;">
-                            <h4>Quality Food</h4>
-                            <p class="mb-0">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam
-                                ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing
-                                labore.</p>
-                        </div>
+                </div>
+
+                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="bg-light rounded p-4">
+                        <img class="img-fluid bg-primary rounded-circle mb-3"
+                             src="img/feature-3.png" style="width: 80px; height: 80px;">
+                        <h4>Quality Food</h4>
+                        <p class="mb-0">
+                            We use carefully selected ingredients and maintain high hygiene standards,
+                            delivering fresh, flavourful food that meets the highest expectations.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- About End -->
+</div>
+<!-- About End -->
+
 
 
     <!-- Menu Start -->
-    <div class="container-fluid menu py-5 px-0">
-        <div class="mb-5 text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px; margin: auto;">
-            <h5 class="section-title">Our Menu</h5>
-            <h1 class="display-3 mb-0">Hands Craft More Than Meals</h1>
-        </div>
-        <div class="tab-class text-center">
-            <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase rounded-pill mb-5 wow fadeIn" data-wow-delay="0.2s">
-                <li class="nav-item">
-                    <a class="nav-link rounded-pill text-white active" data-bs-toggle="pill" href="#tab-1">Breakfast</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link rounded-pill text-white" data-bs-toggle="pill" href="#tab-2">Launch</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link rounded-pill text-white" data-bs-toggle="pill" href="#tab-3">Dinner</a>
-                </li>
-            </ul>
-            <div class="tab-content">
-                <div id="tab-1" class="tab-pane fade show p-0 active">
-                    <div class="row g-0">
-                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-1.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.2s">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-2.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-3.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.4s">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-4.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-5.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.6s">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-6.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.7s">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-7.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.8s">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-8.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
+<div class="container-fluid menu py-5 px-0">
+
+    <style>
+        /* SAME SIZE MENU IMAGES */
+        .menu-img-wrap {
+            width: 100%;
+            height: 260px;       /* 🔥 SAME HEIGHT FOR ALL */
+            overflow: hidden;
+        }
+
+        .menu-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  /* 🔥 KEY */
+            display: block;
+        }
+
+        @media (max-width: 991px) {
+            .menu-img-wrap {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .menu-img-wrap {
+                height: 200px;
+            }
+        }
+    </style>
+
+    <div class="mb-5 text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px; margin: auto;">
+        <h5 class="section-title">Our Menu</h5>
+        <h1 class="display-3 mb-0">Hands Craft More Than Meals</h1>
+    </div>
+
+    <div class="tab-class text-center">
+        <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase rounded-pill mb-5 wow fadeIn"
+            data-wow-delay="0.2s">
+            <li class="nav-item">
+                <a class="nav-link rounded-pill text-white active" data-bs-toggle="pill" href="#tab-1">Sri Lankan Cuisines</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link rounded-pill text-white" data-bs-toggle="pill" href="#tab-2">Indian Cuisines</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link rounded-pill text-white" data-bs-toggle="pill" href="#tab-3">Multi Cuisines</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+
+            <!-- TAB 1 -->
+            <div id="tab-1" class="tab-pane fade show p-0 active">
+                <div class="row g-0">
+                    <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="menu-img-wrap">
+                            <img src="img/1.jpg" alt="">
                         </div>
                     </div>
-                </div>
-                <div id="tab-2" class="tab-pane fade p-0">
-                    <div class="row g-0">
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-2.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-3.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-4.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-5.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-6.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-7.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-8.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-1.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.2s">
+                        <div class="menu-img-wrap">
+                            <img src="img/2.jpg" alt="">
                         </div>
                     </div>
-                </div>
-                <div id="tab-3" class="tab-pane fade p-0">
-                    <div class="row g-0">
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-3.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+                        <div class="menu-img-wrap">
+                            <img src="img/3.jpg" alt="">
                         </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-4.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.4s">
+                        <div class="menu-img-wrap">
+                            <img src="img/4.jpg" alt="">
                         </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-5.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                        <div class="menu-img-wrap">
+                            <img src="img/5.jpg" alt="">
                         </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-6.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.6s">
+                        <div class="menu-img-wrap">
+                            <img src="img/6.jpg" alt="">
                         </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-7.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+                        <div class="menu-img-wrap">
+                            <img src="img/7.jpg" alt="">
                         </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-8.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-1.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="position-relative">
-                                <img class="img-fluid" src="img/menu-2.jpg" alt="">
-                                <div
-                                    class="position-absolute bottom-0 end-0 mb-4 me-4 py-1 px-3 bg-dark rounded-pill text-primary">
-                                    BBQ Chicken</div>
-                            </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.8s">
+                        <div class="menu-img-wrap">
+                            <img src="img/8.jpg" alt="">
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- TAB 2 -->
+            <div id="tab-2" class="tab-pane fade p-0">
+                <div class="row g-0">
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/menu-2.jpg"></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/menu-3.jpg"></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/menu-4.jpg"></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/ind1.jpg"></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/menu-6.jpg"></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/menu-7.jpg"></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/ind2.jpg"></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/ind3.jpg"></div></div>
+                </div>
+            </div>
+
+            <!-- TAB 3 -->
+            <div id="tab-3" class="tab-pane fade p-0">
+                <div class="row g-0">
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/c1.jpg"></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/c2.jpg"></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/c3.jpg"></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/c4.jpg"></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/c5.jpg"></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/c6.jpg"></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/c7.jpg"></div></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6"><div class="menu-img-wrap"><img src="img/c8.jpg"></div></div>
+                </div>
+            </div>
+
         </div>
     </div>
-    <!-- Menu End -->
+</div>
+<!-- Menu End -->
 
 
-    <!-- Team Start -->
+
+    <!-- Team Start 
     <div class="container-fluid p-5">
         <div class="mb-5 text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px; margin: auto;">
             <h5 class="section-title">Expert Chefs</h5>
@@ -552,142 +513,293 @@
             </div>
         </div>
     </div>
-    <!-- Team End -->
+    Team End -->
 
 
     <!-- Testimonial Start -->
-    <div class="container-fluid p-0 my-5">
-        <div class="row g-0">
-            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s" style="min-height: 500px;">
-                <div class="h-100 position-relative overflow-hidden" style="border-top-left-radius: 50%;">
-                    <img class="position-absolute w-100 h-100" src="img/testimonial.jpg" style="object-fit: cover;">
-                </div>
+<div class="container-fluid p-0 my-5">
+    <div class="row g-0">
+        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s" style="min-height: 500px;">
+            <div class="h-100 position-relative overflow-hidden" style="border-top-left-radius: 50%;">
+                <img class="position-absolute w-100 h-100" src="img/testimonial.jpg" style="object-fit: cover;">
             </div>
-            <div class="col-lg-6 bg-dark p-5 overflow-hidden wow fadeIn" data-wow-delay="0.3s" style="border-bottom-right-radius: 50%;">
-                <div class="mb-5">
-                    <h5 class="section-title">Testimonial</h5>
-                    <h1 class="display-3 text-secondary mb-0">Our Client Say</h1>
-                </div>
-                <div class="owl-carousel testimonial-carousel">
-                    <div class="testimonial-item">
-                        <p class="fs-4 fw-normal text-light mb-4"><i
-                                class="fa fa-quote-left text-primary me-3"></i>Dolores sed duo clita tempor justo dolor
-                            et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore
-                            et tempor diam tempor erat dolor rebum sit ipsum.</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid rounded-circle" src="img/testimonial-1.jpg" alt="">
-                            <div class="ps-4">
-                                <h5 class="text-secondary">Client Name</h5>
-                                <span class="small text-uppercase text-secondary"
-                                    style="letter-spacing: 3px;">Profession</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <p class="fs-4 fw-normal text-light mb-4"><i
-                                class="fa fa-quote-left text-primary me-3"></i>Dolores sed duo clita tempor justo dolor
-                            et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore
-                            et tempor diam tempor erat dolor rebum sit ipsum.</p>
-                        <div class="d-flex align-items-center">
-                            <img class="img-fluid rounded-circle" src="img/testimonial-2.jpg" alt="">
-                            <div class="ps-4">
-                                <h5 class="text-secondary">Client Name</h5>
-                                <span class="small text-uppercase text-secondary"
-                                    style="letter-spacing: 3px;">Profession</span>
-                            </div>
+        </div>
+
+        <div class="col-lg-6 bg-dark p-5 overflow-hidden wow fadeIn" data-wow-delay="0.3s" style="border-bottom-right-radius: 50%;">
+            <div class="mb-5">
+                <h5 class="section-title">Testimonial</h5>
+                <h1 class="display-3 text-secondary mb-0">Our Clients Say</h1>
+            </div>
+
+            <div class="owl-carousel testimonial-carousel">
+
+                <!-- Testimonial 01 -->
+                <div class="testimonial-item">
+                    <p class="fs-4 fw-normal text-light mb-4">
+                        <i class="fa fa-quote-left text-primary me-3"></i>
+                        The food was fresh, flavourful, and beautifully presented. Everything was delivered on time and our guests were extremely satisfied.
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <div class="ps-0">
+                            <h5 class="text-secondary mb-1">Mr. Nimal Perera</h5>
+                            <span class="small text-uppercase text-secondary" style="letter-spacing: 3px;">
+                                Private Function
+                            </span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Testimonial 02 -->
+                <div class="testimonial-item">
+                    <p class="fs-4 fw-normal text-light mb-4">
+                        <i class="fa fa-quote-left text-primary me-3"></i>
+                        Excellent catering service with great attention to detail. The team handled everything professionally and the buffet was well managed.
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <div class="ps-0">
+                            <h5 class="text-secondary mb-1">Ms. Sanduni Fernando</h5>
+                            <span class="small text-uppercase text-secondary" style="letter-spacing: 3px;">
+                                Corporate Event
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 03 -->
+                <div class="testimonial-item">
+                    <p class="fs-4 fw-normal text-light mb-4">
+                        <i class="fa fa-quote-left text-primary me-3"></i>
+                        The setup was elegant and the food quality exceeded our expectations. Guests enjoyed every dish and the service was smooth throughout.
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <div class="ps-0">
+                            <h5 class="text-secondary mb-1">Mr. Ruwan Jayasinghe</h5>
+                            <span class="small text-uppercase text-secondary" style="letter-spacing: 3px;">
+                                Wedding Reception
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
+</div>
+<!-- Testimonial End -->
+
 
 
     <!-- Blog Start -->
-    <div class="container-fluid p-5">
-        <div class="mb-5 text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px; margin: auto;">
-            <h5 class="section-title">Our Blog</h5>
-            <h1 class="display-3 mb-0">Latest Articles From Food Blog</h1>
-        </div>
-        <div class="row g-5">
-            <div class="col-lg-4 col-md-6 wow fadeIn" data-wow-delay="0.1s">
-                <div class="blog-item">
-                    <div class="position-relative overflow-hidden rounded-top">
-                        <img class="img-fluid" src="img/menu-3.jpg" alt="">
-                    </div>
-                    <div class="bg-dark d-flex align-items-center rounded-bottom p-4">
-                        <div class="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                            <span>01</span>
-                            <h6 class="text-primary text-uppercase mb-0">January</h6>
-                            <span>2045</span>
-                        </div>
-                        <a class="h5 lh-base text-light" href="">Sed amet tempor amet sit kasd sea lorem</h4></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeIn" data-wow-delay="0.3s">
-                <div class="blog-item">
-                    <div class="position-relative overflow-hidden rounded-top">
-                        <img class="img-fluid" src="img/menu-5.jpg" alt="">
-                    </div>
-                    <div class="bg-dark d-flex align-items-center rounded-bottom p-4">
-                        <div class="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                            <span>01</span>
-                            <h6 class="text-primary text-uppercase mb-0">January</h6>
-                            <span>2045</span>
-                        </div>
-                        <a class="h5 lh-base text-light" href="">Sed amet tempor amet sit kasd sea lorem</h4></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeIn" data-wow-delay="0.5s">
-                <div class="blog-item">
-                    <div class="position-relative overflow-hidden rounded-top">
-                        <img class="img-fluid" src="img/menu-7.jpg" alt="">
-                    </div>
-                    <div class="bg-dark d-flex align-items-center rounded-bottom p-4">
-                        <div class="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                            <span>01</span>
-                            <h6 class="text-primary text-uppercase mb-0">January</h6>
-                            <span>2045</span>
-                        </div>
-                        <a class="h5 lh-base text-light" href="">Sed amet tempor amet sit kasd sea lorem</h4></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="container-fluid p-5">
+
+    <style>
+        /* BLOG IMAGE SAME SIZE */
+        .blog-img-wrap {
+            width: 100%;
+            height: 280px;            /* same height for all */
+            overflow: hidden;
+        }
+
+        .blog-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;        /* key fix */
+            display: block;
+        }
+
+        /* BLOG CARD CLICKABLE + NICE HOVER */
+        .blog-link-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .blog-item {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .blog-link-card:hover .blog-item {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+        }
+
+        .blog-title {
+            margin: 0;
+        }
+
+        .blog-desc {
+            margin: 6px 0 0;
+            color: rgba(255,255,255,0.75);
+            font-size: 0.95rem;
+            line-height: 1.35rem;
+        }
+    </style>
+
+    <div class="mb-5 text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 780px; margin: auto;">
+        <h5 class="section-title">Our Blog</h5>
+        <h1 class="display-3 mb-0">Latest Articles About Catering</h1>
     </div>
-    <!-- Blog End -->
+
+    <div class="row g-5">
+
+        <!-- Blog 01 -->
+        <div class="col-lg-4 col-md-6 wow fadeIn" data-wow-delay="0.1s">
+            <a class="blog-link-card" href="https://en.wikipedia.org/wiki/Catering" target="_blank" rel="noopener">
+                <div class="blog-item">
+                    <div class="position-relative rounded-top blog-img-wrap">
+                        <img class="img-fluid" src="img/blog1.jpg" alt="Catering services overview">
+                    </div>
+
+                    <div class="bg-dark d-flex align-items-start rounded-bottom p-4">
+                        <div class="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3" style="min-width:85px;">
+                            <span>01</span>
+                            <h6 class="text-primary text-uppercase mb-0">Catering</h6>
+                            <span>Guide</span>
+                        </div>
+
+                        <div>
+                            <h5 class="blog-title lh-base text-light">What Catering Means and How It Works</h5>
+                            <p class="blog-desc">A quick guide to catering types, service styles, and where it’s used most.</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Blog 02 -->
+        <div class="col-lg-4 col-md-6 wow fadeIn" data-wow-delay="0.3s">
+            <a class="blog-link-card" href="https://en.wikipedia.org/wiki/Buffet" target="_blank" rel="noopener">
+                <div class="blog-item">
+                    <div class="position-relative rounded-top blog-img-wrap">
+                        <img class="img-fluid" src="img/blog2.jpg" alt="Buffet catering service">
+                    </div>
+
+                    <div class="bg-dark d-flex align-items-start rounded-bottom p-4">
+                        <div class="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3" style="min-width:85px;">
+                            <span>02</span>
+                            <h6 class="text-primary text-uppercase mb-0">Buffet</h6>
+                            <span>Style</span>
+                        </div>
+
+                        <div>
+                            <h5 class="blog-title lh-base text-light">Buffet vs. Plated Catering: Which Suits Your Event?</h5>
+                            <p class="blog-desc">Compare cost, guest experience, speed, and menu flexibility for each style.</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Blog 03 -->
+        <div class="col-lg-4 col-md-6 wow fadeIn" data-wow-delay="0.5s">
+            <a class="blog-link-card" href="https://en.wikipedia.org/wiki/Food_safety" target="_blank" rel="noopener">
+                <div class="blog-item">
+                    <div class="position-relative rounded-top blog-img-wrap">
+                        <img class="img-fluid" src="img/blog3.jpg" alt="Food safety in catering">
+                    </div>
+
+                    <div class="bg-dark d-flex align-items-start rounded-bottom p-4">
+                        <div class="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3" style="min-width:85px;">
+                            <span>03</span>
+                            <h6 class="text-primary text-uppercase mb-0">Food</h6>
+                            <span>Safety</span>
+                        </div>
+
+                        <div>
+                            <h5 class="blog-title lh-base text-light">Food Safety Essentials for Catering Events</h5>
+                            <p class="blog-desc">Learn safe temperatures, hygiene practices, and handling tips for large events.</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+<!-- Blog End -->
+
 
 
     <!-- Instagram Start -->
-    <div class="container-fluid position-relative instagram p-0 mt-5">
-        <a href="" class="d-flex align-items-center justify-content-center position-absolute top-50 start-50 translate-middle bg-white rounded-circle" style="width: 100px; height: 100px; z-index: 1;">
-            <i class="fab fa-instagram fa-2x text-secondary"></i>
-        </a>
-        <div class="row g-0">
-            <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.1s">
-                <img class="img-fluid" src="img/menu-2.jpg" alt="">
+<div class="container-fluid position-relative instagram p-0 mt-5">
+
+    <style>
+        /* Instagram Image Grid */
+        .instagram-item {
+            position: relative;
+            width: 100%;
+            height: 260px;               /* 🔥 SAME HEIGHT FOR ALL */
+            overflow: hidden;
+        }
+
+        .instagram-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;          /* 🔥 KEY FIX */
+            display: block;
+        }
+
+        @media (max-width: 991px) {
+            .instagram-item {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .instagram-item {
+                height: 200px;
+            }
+        }
+    </style>
+
+    <!-- Instagram Icon -->
+    <a href="https://www.instagram.com/sadiquecaterers/"
+       class="d-flex align-items-center justify-content-center position-absolute top-50 start-50 translate-middle bg-white rounded-circle"
+       style="width: 100px; height: 100px; z-index: 2;">
+        <i class="fab fa-instagram fa-2x text-secondary"></i>
+    </a>
+
+    <!-- Images -->
+    <div class="row g-0">
+        <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.1s">
+            <div class="instagram-item">
+                <img src="img/menu-2.jpg" alt="">
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.2s">
-                <img class="img-fluid" src="img/menu-3.jpg" alt="">
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.2s">
+            <div class="instagram-item">
+                <img src="img/menu-3.jpg" alt="">
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.3s">
-                <img class="img-fluid" src="img/menu-4.jpg" alt="">
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.3s">
+            <div class="instagram-item">
+                <img src="img/menu-4.jpg" alt="">
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.4s">
-                <img class="img-fluid" src="img/menu-5.jpg" alt="">
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.4s">
+            <div class="instagram-item">
+                <img src="img/menu-5.jpg" alt="">
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.5s">
-                <img class="img-fluid" src="img/menu-6.jpg" alt="">
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.5s">
+            <div class="instagram-item">
+                <img src="img/menu-6.jpg" alt="">
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.6s">
-                <img class="img-fluid" src="img/menu-7.jpg" alt="">
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.6s">
+            <div class="instagram-item">
+                <img src="img/menu-7.jpg" alt="">
             </div>
         </div>
     </div>
-    <!-- Instagram End -->
+</div>
+<!-- Instagram End -->
+
 
 
     <!-- Footer Start -->
@@ -699,15 +811,15 @@
                         <h3 class="text-light mb-4">Get In Touch</h3>
                         <div class="d-flex mb-2">
                             <i class="bi bi-geo-alt text-primary me-2"></i>
-                            <p class="mb-0">123 Street, New York, USA</p>
+                            <p class="mb-0">34 De Alwis Pl, Dehiwala-Mount Lavinia 10350</p>
                         </div>
                         <div class="d-flex mb-2">
                             <i class="bi bi-envelope-open text-primary me-2"></i>
-                            <p class="mb-0">info@example.com</p>
+                            <p class="mb-0">sadiquecaterers@gmail.com</p>
                         </div>
                         <div class="d-flex mb-2">
                             <i class="bi bi-telephone text-primary me-2"></i>
-                            <p class="mb-0">+012 345 67890</p>
+                            <p class="mb-0">+94 72 561 1885</p>
                         </div>
                         <div class="d-flex mt-4">
                             <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i
@@ -723,34 +835,22 @@
                     <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
                         <h3 class="text-light mb-4">Quick Links</h3>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i
+                            <a class="text-secondary mb-2" href="index.html"><i
                                     class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                            <a class="text-secondary mb-2" href="#"><i
+                            <a class="text-secondary mb-2" href="about.html"><i
                                     class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                            <a class="text-secondary mb-2" href="#"><i
+                            <a class="text-secondary mb-2" href="menu.html"><i
                                     class="bi bi-arrow-right text-primary me-2"></i>Food Menu</a>
-                            <a class="text-secondary mb-2" href="#"><i
-                                    class="bi bi-arrow-right text-primary me-2"></i>Our Chefs</a>
-                            <a class="text-secondary mb-2" href="#"><i
-                                    class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
-                            <a class="text-secondary" href="#"><i
-                                    class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
                         <h3 class="text-light mb-4">More Links</h3>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i
-                                    class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                            <a class="text-secondary mb-2" href="#"><i
-                                    class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                            <a class="text-secondary mb-2" href="#"><i
-                                    class="bi bi-arrow-right text-primary me-2"></i>Food Menu</a>
-                            <a class="text-secondary mb-2" href="#"><i
-                                    class="bi bi-arrow-right text-primary me-2"></i>Our Chefs</a>
-                            <a class="text-secondary mb-2" href="#"><i
+                            <a class="text-secondary mb-2" href="blog.html"><i
                                     class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
-                            <a class="text-secondary" href="#"><i
+                            <a class="text-secondary mb-2" href="team.html"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Reservation</a>
+                            <a class="text-secondary mb-2" href="contact.html"><i
                                     class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
                         </div>
                     </div>
@@ -758,25 +858,46 @@
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-5"
-                    style="background: #111111;">
+                     style="background: #111111;">
+            
                     <h3 class="text-white mb-4">Newsletter</h3>
                     <h6 class="text-uppercase text-light mb-2">Subscribe Our Newsletter</h6>
-                    <p class="small text-secondary">Amet justo diam dolor rebum lorem sit stet sea justo kasd</p>
-                    <form action="">
+                    <p class="small text-secondary">
+                        Get updates on our catering services, menus, and special offers.
+                    </p>
+            
+                    <!-- Formspree Form -->
+                    <form action="https://formspree.io/f/mjknzybq" method="POST" class="w-100">
+            
                         <div class="input-group">
-                            <input type="text" class="form-control border-white p-3" placeholder="Your Email">
-                            <button class="btn btn-primary">Sign Up</button>
+                            <input
+                                type="email"
+                                name="email"
+                                class="form-control border-white p-3"
+                                placeholder="Your Email Address"
+                                required
+                            >
+            
+                            <button type="submit" class="btn btn-primary px-4">
+                                Sign Up
+                            </button>
                         </div>
+            
+                        <!-- Optional hidden field -->
+                        <input type="hidden" name="source" value="Newsletter Subscription">
+            
                     </form>
+            
                 </div>
             </div>
+            
         </div>
     </div>
     <div class="container-fluid py-4 py-lg-0 px-5" style="background: #111111;">
         <div class="row gx-5">
             <div class="col-lg-8">
                 <div class="py-lg-4 text-center">
-                    <p class="text-secondary mb-0">&copy; <a class="text-light fw-bold" href="#">Your Site Name</a>. All
+                    <p class="text-secondary mb-0">&copy; <a class="text-light fw-bold" href="http://sadiquecaterers.lk/">Sadique Caterers</a>. All
                         Rights Reserved.</p>
                 </div>
             </div>
@@ -784,7 +905,7 @@
                 <div class="py-lg-4 text-center credit">
                     <!--/*** The author’s attribution link must remain intact in the template. ***/-->
                     <!--/*** If you wish to remove this credit link, please purchase the Pro Version . ***/-->
-                    <p class="text-light mb-0">Designed by <a class="text-light fw-bold" href="https://htmlcodex.com">HTML Codex</a></p>
+                    <p class="text-light mb-0">Designed by <a class="text-light fw-bold" href="https://qlsolution.us/">Quantum Leap Solution</a></p>
                 </div>
             </div>
         </div>
